@@ -19,18 +19,7 @@ const data = [
     Ash: 2.67,
     Magnesium: 101,
   },
-  {
-    Alcohol: 14.37,
-    Flavanoids: 3.49,
-    Ash: 2.5,
-    Magnesium: 145,
-  },
-  {
-    Alcohol: 13.24,
-    Flavanoids: 2.69,
-    Ash: 2.87,
-    Magnesium: 118,
-  },
+ 
 ];
 
 
