@@ -19,6 +19,18 @@ const data = [
     Ash: 2.67,
     Magnesium: 101,
   },
+  {
+    Alcohol: 14.37,
+    Flavanoids: 3.49,
+    Ash: 2.5,
+    Magnesium: 145,
+  },
+  {
+    Alcohol: 13.24,
+    Flavanoids: 2.69,
+    Ash: 2.87,
+    Magnesium: 118,
+  },
  
 ];
 
@@ -53,31 +65,43 @@ export const LineChart = () => {
 
 // Bar Chart Configuration
 
+
 export const BarChart = () => {
-  const categories = data.map((item) => item.Alcohol);   //.toFixed(2)
-  const minMagnesiumValues = data.map((item) => item.Magnesium);
+  const alcoholData = data.map((wine) => wine.Alcohol);
+  const magnesiumData = data.map((wine) => wine.Magnesium);
+  const uniqueAlcohols = [...new Set(alcoholData)];
+  const minMagnesiumData = uniqueAlcohols
+    .map((alcohol) => {
+      const alcoholMagnesiumValues = magnesiumData.filter(
+        (value, index) => alcoholData[index] === alcohol
+      );
+      return Math.min(...alcoholMagnesiumValues);
+    })
+    .slice(0, 3);
+  const uniqueAlcoholsShortened = uniqueAlcohols.slice(0, 3);
+
   const option = {
-    title: {
-      text: "Minimum Magnesium for Each Alcohol Category",
-    },
-    tooltip: {
-    
-    },
     xAxis: {
-      type: "category",
-      data: categories,
-      name: "Alcohol",
+      type: 'category',
+      data: uniqueAlcoholsShortened,
+      name: 'Alcohol',
     },
     yAxis: {
-      type: "value",
-      name: "Minimum Magnesium",
+      type: 'value',
+      name: 'Magnesium',
     },
     series: [
       {
-        type: "bar",
-        data: minMagnesiumValues,
+        data: minMagnesiumData,
+        type: 'bar',
       },
     ],
   };
-  return <ReactECharts option={option} />;
+
+  return (
+    <ReactECharts
+      option={option}
+      style={{ height: '500px' }}
+    />
+  );
 };

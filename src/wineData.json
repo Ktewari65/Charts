@@ -1,0 +1,33 @@
+[
+    {
+      "Alcohol": 14.23,
+      "Malic acid": 1.71,
+      "Ash": 2.43,
+      "Alcalinity of ash": 15.6,
+      "Magnesium": 127,
+      "Total phenols": 2.8,
+      "Flavanoids": 3.06,
+      "Nonflavanoid phenols": 0.28,
+      "Proanthocyanins": 2.29,
+      "Color intensity": 5.64,
+      "Hue": 1.04,
+      "OD280/OD315 of diluted wines": 3.92,
+      "Proline": 1065
+    },
+    {
+      "Alcohol": 13.2,
+      "Malic acid": 1.78,
+      "Ash": 2.14,
+      "Alcalinity of ash": 11.2,
+      "Magnesium": 100,
+      "Total phenols": 2.65,
+      "Flavanoids": 2.76,
+      "Nonflavanoid phenols": 0.26,
+      "Proanthocyanins": 1.28,
+      "Color intensity": 4.38,
+      "Hue": 1.05,
+      "OD280/OD315 of diluted wines": 3.4,
+      "Proline": 1050
+    }
+    
+  ]
